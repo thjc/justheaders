@@ -1,14 +1,15 @@
-#ifndef __FIRST_CPP__
-#define __FIRST_CPP__
+#ifndef FIRST_CPP
+#define FIRST_CPP
 
 #ifdef IMPLEMENTATION
-#define __FIRST_CPP__IMPLEMENTATION__
-#undef IMPLMENTATION
+#define FIRST_CPP_IMPLEMENTATION
+#undef IMPLEMENTATION
 #endif
 
-#include "base.cpp"
+#include "utterance.cpp"
+#include <string>
 
-class First : public Base
+class First : public Utterance
 {
     public:
         First() : word("Hello") {}

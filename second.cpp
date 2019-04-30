@@ -1,14 +1,14 @@
-#ifndef __SECOND_CPP__
-#define __SECOND_CPP__
+#ifndef SECOND_CPP
+#define SECOND_CPP
 
 #ifdef IMPLEMENTATION
-#define __SECOND_CPP__IMPLEMENTATION__
-#undef IMPLMENTATION
+#define SECOND_CPP_IMPLEMENTATION
+#undef IMPLEMENTATION
 #endif
 
-#include "base.cpp"
+#include "utterance.cpp"
 
-class Second : public Base
+class Second : public Utterance
 {
     public:
         Second() {}
@@ -21,7 +21,7 @@ class Second : public Base
         static std::string word;
 };
 
-#ifdef __SECOND_CPP__IMPLEMENTATION__
+#ifdef SECOND_CPP_IMPLEMENTATION
 std::string Second::word = "World";
 #endif
 

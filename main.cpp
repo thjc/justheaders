@@ -1,23 +1,29 @@
-#ifndef __MAIN_CPP__
-#define __MAIN_CPP__
+#ifndef MAIN_CPP
+#define MAIN_CPP
 
 #ifdef IMPLEMENTATION
-#define __MAIN_CPP__IMPLEMENTATION__
-#undef IMPLMENTATION
+#define MAIN_CPP_IMPLEMENTATION
+#undef IMPLEMENTATION
 #endif
 
-#ifdef __MAIN_CPP__IMPLEMENTATION__
+#ifdef MAIN_CPP_IMPLEMENTATION
 
 #include <iostream>
 #include "first.cpp"
 #include "second.cpp"
+#include "sayer.cpp"
 
 int main(int, char *[])
 {
     First f;
     Second s;
-
-    std::cout << f.GetWord() << " " << s.GetWord() << "!" << std::endl;
+    Sayer s1(f);
+    Sayer s2(s);
+ 
+    s1.Say();
+    std::cout << " ";
+    s2.Say();
+    std::cout << "!" << std::endl;
     return 0;
 }
 

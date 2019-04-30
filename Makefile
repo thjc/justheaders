@@ -6,13 +6,11 @@ CC=clang++
 %.o: %.cpp
 	${CC} ${CXXFLAGS} -c $< -o $@ -MD -MF $*.d
 
-test: main.o first.o second.o
-	${CC} $< -o $@ 
+test: main.o first.o second.o sayer.o
+	${CC} $^ -o $@ 
 
 clean:
 	rm -f test *.o *.d
-
-sources = foo.c bar.c
 
 .PHONY: clean
 
